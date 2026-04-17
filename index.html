@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Faitles.App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: rgb(228, 228, 228);
+        }
+
+        .border-inferior {
+            border-bottom: solid 20px rgb(228, 228, 228);
+        }
+
+        #playa {
+            aspect-ratio: 1200 / 372;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #playa video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-inner {
+            border-radius: 5px;
+        }
+
+        .display-card,
+        .col-4 {
+            padding: 30px 0;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            width: 22rem;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .formulario,
+        .footer {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .ico {
+            display: grid;
+            align-items: center;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-dark border-inferior" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-fire"></i>
+                <!-- <img src="cohete.png" height="35"> Faitles.App -->
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContenido">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categorías</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Electrónica</a></li>
+                            <li><a class="dropdown-item" href="#">Audio</a></li>
+                            <li><a class="dropdown-item" href="#">Otros</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar productos...">
+                    <button class="btn btn-outline-success">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+
+        <!-- CAROUSEL -->
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <div id="playa">
+                        <video src="playa.mp4" autoplay muted loop></video>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/id/2/1200/372" class="d-block w-100">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/id/3/1200/372" class="d-block w-100">
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <!-- CARDS -->
+        <div class="display-card">
+
+            <div class="card">
+                <img src="https://picsum.photos/id/15/600/400" class="card-img-top">
+                <div class="card-body">
+                    <h5>Bosque</h5>
+                    <p>Contenido de ejemplo para la tarjeta.</p>
+                    <a href="#" class="btn btn-primary">Ver más <i class="bi bi-bookmark-plus"></i></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/id/16/600/400" class="card-img-top">
+                <div class="card-body">
+                    <h5>Océano</h5>
+                    <p>Contenido de ejemplo para la tarjeta.</p>
+                    <a href="#" class="btn btn-primary">Ver más <i class="bi bi-bookmark-plus"></i></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/id/17/600/400" class="card-img-top">
+                <div class="card-body">
+                    <h5>Caminata</h5>
+                    <p>Contenido de ejemplo para la tarjeta.</i></p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">
+                        Ver más <i class="bi bi-bookmark-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- MODAL -->
+        <div class="modal fade" id="miModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Imagen</h5>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img src="https://picsum.photos/id/684/600/400" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORMULARIO -->
+        <div>
+            <div class="formulario">
+                <h4>Suscríbete</h4>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" class="form-control" placeholder="Tu nombre">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="ejemplo@gmail.com">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    &nbsp; <!-- espacio en blanco -->
+    <div class="footer">
+        <div class="row">
+            <div class="col-4">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Contactanos</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div id="fi1" class="col-4">
+                <span class="ico">
+                    <i class="bi bi-browser-chrome"></i>
+                </span>
+                <span class="ico">
+                    <i class="bi bi-browser-safari"></i>
+                </span>
+                <span class="ico">
+                    <i class="bi bi-apple-music"></i>
+                </span>
+                <span class="ico">
+                    <i class="bi bi-android2"></i>
+                </span>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
